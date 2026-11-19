@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-ivory text-charcoal antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif font-medium tracking-tight;
+  }
+  ::selection {
+    background: #c4a46a;
+    color: #171b18;
+  }
+  :focus-visible {
+    outline: 2px solid #c4a46a;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-forest px-7 py-3.5 text-sm font-medium tracking-wide text-ivory transition-all duration-500 hover:bg-charcoal hover:shadow-gold disabled:pointer-events-none disabled:opacity-40;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-medium tracking-wide text-charcoal transition-all duration-500 hover:bg-gold-light hover:shadow-gold disabled:pointer-events-none disabled:opacity-40;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 px-6 py-3 text-sm font-medium text-forest transition-all duration-500 hover:border-gold hover:text-gold-dark disabled:pointer-events-none disabled:opacity-40;
+  }
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ivory/40 px-7 py-3.5 text-sm font-medium tracking-wide text-ivory transition-all duration-500 hover:border-gold hover:text-gold;
+  }
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-[0.28em] text-gold-dark;
+  }
+  .card-lux {
+    @apply rounded-2xl bg-white ring-1 ring-forest/5 shadow-[0_10px_30px_-18px_rgba(25,39,31,0.25)];
+  }
+  .input-lux {
+    @apply w-full rounded-xl border border-forest/15 bg-white px-4 py-3 text-sm text-charcoal placeholder:text-muted transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-forest/15 bg-white px-4 py-2 text-xs font-medium text-forest transition-all duration-300 hover:border-gold hover:text-gold-dark;
+  }
+  .chip-active {
+    @apply border-forest bg-forest text-ivory hover:border-forest hover:text-ivory;
+  }
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gold/60 to-transparent;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+}
